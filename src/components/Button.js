@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { darken, rem } from "polished";
+import { Skeleton } from "skeleton";
 
 import { Button as ButtonElement } from "./elements";
 
@@ -96,7 +97,9 @@ export const ButtonText = styled.span`
 
 export const Button = ({ children, variant, onClick, ...props }) => (
   <ButtonWithVariants variant={variant} onClick={onClick} {...props}>
-    <ButtonText>{children}</ButtonText>
+    <Skeleton display="inline-block" lineHeight="3.5rem">
+      <ButtonText>{children}</ButtonText>
+    </Skeleton>
   </ButtonWithVariants>
 );
 Button.defaultProps = {

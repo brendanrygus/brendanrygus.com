@@ -41,7 +41,7 @@ export const Hero = () => {
             <Block py={5} px={[4, 5]}>
               <Stack gap={4}>
                 <HeadingStroke fontSize={[9, 8, 9, 11]}>
-                  <Skeleton isLoading>
+                  <Skeleton>
                     <Content id="portfolio.heroTitle" />
                   </Skeleton>
                 </HeadingStroke>
@@ -49,7 +49,7 @@ export const Hero = () => {
                 {/* <Keyline /> */}
 
                 <Stack gap={2}>
-                  <Skeleton isLoading>
+                  <Skeleton>
                     <Paragraph fontSize={3} fontFamily="secondary">
                       <Content id="portfolio.heroSubtitle" />
                     </Paragraph>
