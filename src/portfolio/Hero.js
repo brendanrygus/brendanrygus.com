@@ -1,27 +1,11 @@
 import React from "react";
 import {
-  darken,
-  lighten,
-  meetsContrastGuidelines,
-  radialGradient,
-  linearGradient
-} from "polished";
-import styled, { useTheme } from "styled-components";
-import {
-  AspectRatio,
-  AspectRatioImage,
   Block,
   Button,
   Grid,
   HeadingStroke,
-  HeadingLarge,
-  HeadingMedium,
   Link,
-  Page,
   Stack,
-  Tag,
-  Flex,
-  Keyline,
   Paragraph
 } from "components";
 import { Content } from "content";
@@ -30,7 +14,6 @@ import { RouterLink } from "router";
 
 import { PortfolioScrollRoutes } from "./portfolio.routes";
 import { FillImage } from "./FillImage";
-import BgImage from "./bg.jpg";
 
 export const Hero = () => {
   return (
