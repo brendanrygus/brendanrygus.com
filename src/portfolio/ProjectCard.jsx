@@ -140,6 +140,7 @@ export const ProjectBaseballCard = ({
               bg={isHovered ? brandColor : "surfaceBody"}
               description={description}
               tags={tags}
+              height="100%"
             />
           </SlideIn>
         </Grid>
@@ -148,9 +149,14 @@ export const ProjectBaseballCard = ({
   );
 };
 
-const ProjectDetails = ({ bg, description, tags }) => {
+const ProjectDetails = ({ bg, description, tags, ...props }) => {
   return (
-    <ContrastAwareTextBlock bg={bg} alignItems="center" display="flex">
+    <ContrastAwareTextBlock
+      bg={bg}
+      alignItems="center"
+      display="flex"
+      {...props}
+    >
       <Stack p={4} gap={3}>
         {description && (
           <>
