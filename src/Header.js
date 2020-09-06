@@ -53,8 +53,8 @@ export const Header = () => {
             to={createHashLink(PortfolioScrollRoutes.About)}
             color="textPrimary"
             fontSize={[3, 4, 5]}
-            fontWeight="semiBold"
-            letterSpacing={1}
+            fontWeight="light"
+            letterSpacing={2}
             style={{ textTransform: "uppercase", textDecoration: "none" }}
             onClick={() => trackNavigationEvent("Title")}
           >
