@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { Block } from "components";
+import styled, { css, keyframes } from "styled-components";
+import { Block } from "components/Block";
 
 export const VisuallyHidden = styled.span`
   visibility: hidden;
@@ -14,25 +14,24 @@ export const WaveAnimation = keyframes`
   }
 `;
 
-export const SkeletonLoadingBar = styled(Block)`
-  border-radius: 0.25rem;
-  height: 1em;
+export const WavePlaceholderStyles = css`
   overflow: hidden;
   position: relative;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
-    background: currentColor;
     bottom: 0;
     left: 0;
-    opacity: 0.1;
     position: absolute;
     right: 0;
     top: 0;
   }
-
+  &::before {
+    background: currentColor;
+    opacity: 0.1;
+  }
   &::after {
-    content: "";
     animation: ${WaveAnimation} 2s ${({ theme }) => theme.motion.easing.default}
       infinite;
     background-image: linear-gradient(
@@ -41,12 +40,13 @@ export const SkeletonLoadingBar = styled(Block)`
       currentColor 50%,
       transparent 100%
     );
-    bottom: 0;
-    left: 0;
     opacity: 0.25;
-    position: absolute;
-    right: 0;
-    top: 0;
   }
+`;
+
+export const SkeletonLoadingBar = styled(Block)`
+  border-radius: 0.25rem;
+  height: 1em;
+  ${WavePlaceholderStyles};
 `;
 SkeletonLoadingBar.displayName = "SkeletonLoadingBar";
