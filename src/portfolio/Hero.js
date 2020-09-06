@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import {
   Block,
   Button,
@@ -15,18 +16,19 @@ import { RouterLink } from "router";
 import { PortfolioScrollRoutes } from "./portfolio.routes";
 import { FillImage } from "./FillImage";
 
+const ImageOverlay = styled(Block)`
+  ${({ isHovered, theme }) =>
+    isHovered ? theme.imageOverlayHover : theme.imageOverlay};
+`;
+
 export const Hero = () => {
   return (
     <Grid as="section" gridTemplateColumns={["initial", "initial", "6fr 4fr"]}>
       <Block key="left" bg="surfaceBody" display={["none", "none", "block"]}>
         <React.Suspense fallback={null}>
-          <Block
-            width="100%"
-            height="100%"
-            style={{ mixBlendMode: "soft-light" }}
-          >
+          <ImageOverlay width="100%" height="100%">
             <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
-          </Block>
+          </ImageOverlay>
         </React.Suspense>
 
         <HeaderOffset></HeaderOffset>
