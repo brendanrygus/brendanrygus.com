@@ -43,14 +43,15 @@ export const HashScrollManager = ({ children }) => {
 export const HashScrollRoute = ({ children, id, threshold }) => {
   const [ref, inView] = useInView({ threshold });
   const scrollRef = React.useRef(null);
-  const { history, location } = useRouter();
+  const { location } = useRouter();
+  const { hash } = location;
 
+  // TODO: Refactor scroll route management to sync with header bar
   React.useEffect(() => {
-    if (inView) {
-      history.push({ ...location, hash: id });
+    if (hash.includes(id)) {
+      console.log("inView", inView);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
+  }, [hash, id, inView]);
 
   return (
     <section id={id} ref={ref}>
