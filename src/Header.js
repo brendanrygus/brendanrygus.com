@@ -14,6 +14,7 @@ import { Content } from "content";
 import { Icon } from "icons";
 import { PortfolioScrollRoutes } from "portfolio";
 import { routes, RouterLink, useLocation } from "router";
+import { Skeleton } from "skeleton";
 import { useDarkMode } from "theme";
 
 const BlurredBlock = styled(Block)`
@@ -57,7 +58,9 @@ export const Header = () => {
             style={{ textTransform: "uppercase", textDecoration: "none" }}
             onClick={() => trackNavigationEvent("Title")}
           >
-            <Content id="contact.name" />
+            <Skeleton>
+              <Content id="contact.name" />
+            </Skeleton>
           </Paragraph>
 
           <Stack direction="horizontal" gap={3} justifyContent="flex-end">
@@ -70,7 +73,7 @@ export const Header = () => {
               fontFamily="secondary"
               onClick={() => trackNavigationEvent("About")}
             >
-              About
+              <Skeleton>About</Skeleton>
             </Link>
             <Link
               as={RouterLink}
@@ -81,7 +84,7 @@ export const Header = () => {
               fontFamily="secondary"
               onClick={() => trackNavigationEvent("Work")}
             >
-              Work
+              <Skeleton>Work</Skeleton>
             </Link>
             <DarkModeToggle />
           </Stack>

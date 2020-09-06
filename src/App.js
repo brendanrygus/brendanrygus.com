@@ -8,6 +8,7 @@ import { ContentProvider } from "content";
 import { FeatureFlagProvider } from "feature-flags";
 import { PortfolioPage } from "portfolio";
 import { routes, HashScrollManager } from "router";
+import { SkeletonProvider } from "skeleton";
 import { ThemeProvider } from "theme";
 
 import { ErrorFallback, LoadingFallback, NotFound } from "./fallbacks";
@@ -53,7 +54,10 @@ const App = () => (
         <ThemeProvider>
           <AnalyticsProvider>
             <ContentProvider>
-              <Routes />
+              {/* TODO: Hook up to web font loader */}
+              <SkeletonProvider isLoading={false}>
+                <Routes />
+              </SkeletonProvider>
             </ContentProvider>
           </AnalyticsProvider>
         </ThemeProvider>

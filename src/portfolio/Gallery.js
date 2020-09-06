@@ -4,6 +4,7 @@ import { useAnalytics, EVENT_TYPES } from "analytics";
 import { Block, Grid, HeadingMedium, Stack } from "components";
 import { Content } from "content";
 import { useFeatureFlags } from "feature-flags";
+import { Skeleton } from "skeleton";
 
 import { SkeletonCard } from "./ProjectCardSkeleton";
 
@@ -54,10 +55,14 @@ export const Gallery = ({ projects }) => {
     <Block as="section" textAlign="left" pb={5} px={[3, 4, 5]}>
       <Stack mb={5} gap={3}>
         <HeadingMedium fontSize={3} fontFamily="secondary">
-          <Content id="portfolio.subtitle" />
+          <Skeleton width="12ch">
+            <Content id="portfolio.subtitle" />
+          </Skeleton>
         </HeadingMedium>
         <HeadingMedium>
-          <Content id="portfolio.title" />
+          <Skeleton width="12ch">
+            <Content id="portfolio.title" />
+          </Skeleton>
         </HeadingMedium>
       </Stack>
 

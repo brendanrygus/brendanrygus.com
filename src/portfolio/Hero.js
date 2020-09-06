@@ -12,6 +12,7 @@ import {
 import { Content } from "content";
 import { HeaderOffset } from "Header";
 import { RouterLink } from "router";
+import { Skeleton } from "skeleton";
 
 import { PortfolioScrollRoutes } from "./portfolio.routes";
 import { FillImage } from "./FillImage";
@@ -40,26 +41,31 @@ export const Hero = () => {
             <Block py={5} px={[4, 5]}>
               <Stack gap={4}>
                 <HeadingStroke fontSize={[9, 8, 9, 11]}>
-                  <Content id="portfolio.heroTitle" />
+                  <Skeleton isLoading>
+                    <Content id="portfolio.heroTitle" />
+                  </Skeleton>
                 </HeadingStroke>
+
                 {/* <Keyline /> */}
 
                 <Stack gap={2}>
-                  <Paragraph fontSize={3} fontFamily="secondary">
-                    <Content id="portfolio.heroSubtitle" />
-                  </Paragraph>
-                  <Paragraph fontFamily="secondary" fontSize={3}>
-                    Currently building next-generation web apps at{" "}
-                    <Link
-                      href="http://rangle.io"
-                      target="_blank"
-                      rel="noreferrer"
-                      variant="Flat"
-                    >
-                      Rangle.io
-                    </Link>
-                    .
-                  </Paragraph>
+                  <Skeleton isLoading>
+                    <Paragraph fontSize={3} fontFamily="secondary">
+                      <Content id="portfolio.heroSubtitle" />
+                    </Paragraph>
+                    <Paragraph fontFamily="secondary" fontSize={3}>
+                      Currently building next-generation web apps at{" "}
+                      <Link
+                        href="http://rangle.io"
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="Flat"
+                      >
+                        Rangle.io
+                      </Link>
+                      .
+                    </Paragraph>
+                  </Skeleton>
                 </Stack>
               </Stack>
             </Block>
