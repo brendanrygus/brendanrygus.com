@@ -25,7 +25,7 @@ export const SkeletonLoadingBar = styled(Block)`
     background: currentColor;
     bottom: 0;
     left: 0;
-    opacity: 0.25;
+    opacity: 0.1;
     position: absolute;
     right: 0;
     top: 0;
@@ -43,7 +43,7 @@ export const SkeletonLoadingBar = styled(Block)`
     );
     bottom: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.25;
     position: absolute;
     right: 0;
     top: 0;

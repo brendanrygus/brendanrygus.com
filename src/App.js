@@ -47,23 +47,34 @@ const Routes = () => (
   </Router>
 );
 
-const App = () => (
-  <React.StrictMode>
-    <HelmetProvider>
-      <FeatureFlagProvider>
-        <ThemeProvider>
-          <AnalyticsProvider>
-            <ContentProvider>
-              {/* TODO: Hook up to web font loader */}
-              <SkeletonProvider isLoading={false}>
-                <Routes />
-              </SkeletonProvider>
-            </ContentProvider>
-          </AnalyticsProvider>
-        </ThemeProvider>
-      </FeatureFlagProvider>
-    </HelmetProvider>
-  </React.StrictMode>
-);
+const MOCK_FONT_LOADING_DELAY = 1500;
+
+const App = () => {
+  // TODO: Hook up to async web font loading callback
+  const [fontsLoaded, setFontsLoaded] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setFontsLoaded(true);
+    }, MOCK_FONT_LOADING_DELAY);
+  }, []);
+
+  return (
+    <React.StrictMode>
+      <HelmetProvider>
+        <FeatureFlagProvider>
+          <ThemeProvider>
+            <AnalyticsProvider>
+              <ContentProvider>
+                <SkeletonProvider isLoading={!fontsLoaded}>
+                  <Routes />
+                </SkeletonProvider>
+              </ContentProvider>
+            </AnalyticsProvider>
+          </ThemeProvider>
+        </FeatureFlagProvider>
+      </HelmetProvider>
+    </React.StrictMode>
+  );
+};
 
 export default App;
