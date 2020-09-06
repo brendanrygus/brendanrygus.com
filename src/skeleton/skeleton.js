@@ -1,6 +1,7 @@
 import React from "react";
+import { VisuallyHidden } from "components/Visibility";
 
-import { VisuallyHidden, SkeletonLoadingBar } from "./skeleton.style";
+import { SkeletonLoadingBar } from "./skeleton.style";
 
 const SkeletonContext = React.createContext({ isLoading: false });
 export const useSkeleton = () => React.useContext(SkeletonContext);

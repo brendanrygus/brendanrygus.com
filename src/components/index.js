@@ -17,3 +17,4 @@ export * from "./elements";
 export * from "./headings";
 export * from "./Motion";
 export * from "./Position";
+export * from "./Visibility";

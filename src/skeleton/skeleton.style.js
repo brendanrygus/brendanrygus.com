@@ -1,10 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { Block } from "components/Block";
 
-export const VisuallyHidden = styled.span`
-  visibility: hidden;
-`;
-
 export const WaveAnimation = keyframes`
   from {
     transform: translateX(-100%)
