@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Block } from "components";
+import { FadeInStyles, SlideInStyles } from "styles";
 
-import { FadeInStyles, SlideInStyles } from "../styles";
+import { Block } from "./Block";
 
 const AnimationTimingStyles = css`
   animation-delay: ${({ delay, theme }) => theme.motion.speed[delay] || delay};

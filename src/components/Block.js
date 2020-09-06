@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 import {
   background,
@@ -19,7 +20,7 @@ const addVariantTheme = ({ variant }) =>
     color: ${themeGet(`variants.${variant}.color`)};
   `;
 
-export const Block = styled("div")`
+const BlockWrapper = styled("div")`
   ${addVariantTheme};
   ${background};
   ${border};
@@ -31,3 +32,7 @@ export const Block = styled("div")`
   ${space};
   ${typography};
 `;
+
+export const Block = React.forwardRef((props, ref) => (
+  <BlockWrapper {...props} ref={ref} />
+));

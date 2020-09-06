@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { color, space, typography } from "styled-system";
 
@@ -13,13 +14,14 @@ Paragraph.defaultProps = {
   lineHeight: "body"
 };
 
-export const Heading = styled.h3`
+const HeadingElement = styled.h3`
   ${color};
   ${space};
   ${typography};
 `;
-Heading.defaultProps = {
+HeadingElement.defaultProps = {
   fontFamily: "primary",
   fontWeight: 400,
   lineHeight: "heading"
 };
+export const Heading = props => <HeadingElement {...props} />;

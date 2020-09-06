@@ -8,6 +8,6 @@ export const HeadingMedium = styled(Heading)`
 `;
 HeadingMedium.defaultProps = {
   fontSize: 6,
-  lineHeight: 1.1
+  lineHeight: "heading"
 };
 HeadingMedium.displayName = "HeadingMedium";

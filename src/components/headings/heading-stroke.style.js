@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
 import { Heading } from "../elements";
 
 const STROKE_WIDTH = "1px";
 
-export const HeadingStroke = styled(Heading)`
+const HeadingStrokeStyles = styled(Heading)`
   -moz-text-fill-color: transparent;
   -moz-text-stroke-color: currentColor;
   -moz-text-stroke-width: ${STROKE_WIDTH};
@@ -15,9 +16,9 @@ export const HeadingStroke = styled(Heading)`
   paint-order: stroke fill;
   text-transform: uppercase;
 `;
-HeadingStroke.defaultProps = {
+HeadingStrokeStyles.defaultProps = {
   fontSize: ["4rem", "6rem", "7.5rem"],
   fontWeight: 700,
   lineHeight: "base"
 };
-HeadingStroke.displayName = "HeadingStroke";
+export const HeadingStroke = props => <HeadingStrokeStyles {...props} />;
