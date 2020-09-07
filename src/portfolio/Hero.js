@@ -75,7 +75,7 @@ export const Hero = () => {
               <Button
                 as={RouterLink}
                 to={{ hash: PortfolioScrollRoutes.Work }}
-                variant="Cta"
+                variant="Secondary"
                 style={{ borderRadius: 0 }}
               >
                 See Work

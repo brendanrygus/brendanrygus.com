@@ -142,14 +142,14 @@ const variants = {
 const buttonVariants = {
   Primary: {
     bgColor: colorPalette.black,
-    bgHover: colorPalette.blurple,
+    bgHover: colorPalette.black8,
     color: colors.textOnDark,
     linkColor: colors.brandPrimary,
     linkHover: colorPalette.blurple
   },
   Secondary: {
     bgColor: colorPalette.white,
-    bgHover: colorPalette.ice,
+    bgHover: rgba(255, 255, 255, 0.95),
     color: colorPalette.black8,
     linkColor: colorPalette.hawaii,
     linkHover: colorPalette.ice
@@ -188,7 +188,6 @@ export const theme = {
 
   fonts: {
     primary: "'IBM Plex Sans', sans-serif",
-    // primary: "'Cormorant', serif",
     secondary: "'IBM Plex Mono', monospace"
   },
   fontSizes: [
@@ -223,7 +222,6 @@ export const theme = {
       default: "ease",
       enter: "ease-in",
       exit: "ease-out",
-      // spring: "cubic-bezier(0.33, 0, 0, 1)",
       spring: "cubic-bezier(0.215, 0.61, 0.355, 1)"
     },
     speed: ["100ms", "200ms", "300ms", "600ms", "1000ms"]

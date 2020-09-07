@@ -87,13 +87,15 @@ export const ButtonWithVariants = styled(ButtonElement)`
     }
   }
 `;
+ButtonWithVariants.displayName = "ButtonWithVariants";
 
 export const ButtonText = styled.span`
   font-size: ${({ theme }) => theme.fontSizes[4]};
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
 `;
+ButtonText.displayName = "ButtonText";
 
 export const Button = ({ children, variant, onClick, ...props }) => (
   <ButtonWithVariants variant={variant} onClick={onClick} {...props}>
