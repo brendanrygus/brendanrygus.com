@@ -7,7 +7,8 @@ import {
   HeadingStroke,
   Link,
   Stack,
-  Paragraph
+  Paragraph,
+  Relative
 } from "components";
 import { Content } from "content";
 import { HeaderOffset } from "Header";
@@ -18,6 +19,11 @@ import { PortfolioScrollRoutes } from "./portfolio.routes";
 import { FillImage } from "./FillImage";
 
 const ImageOverlay = styled(Block)`
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  left: 0;
+  right: 0;
   ${({ isHovered, theme }) =>
     isHovered ? theme.imageOverlayHover : theme.imageOverlay};
 `;
@@ -26,28 +32,40 @@ export const Hero = () => {
   return (
     <Grid as="section" gridTemplateColumns={["initial", "initial", "6fr 4fr"]}>
       <Block key="left" bg="surfaceBody" display={["none", "none", "block"]}>
-        <React.Suspense fallback={null}>
-          <ImageOverlay width="100%" height="100%">
-            <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
-          </ImageOverlay>
-        </React.Suspense>
+        <Relative width="100%" height="100%">
+          <React.Suspense fallback={null}>
+            <ImageOverlay width="100%" height="100%">
+              <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+            </ImageOverlay>
+          </React.Suspense>
 
-        <HeaderOffset></HeaderOffset>
+          <HeaderOffset
+            alignItems="center"
+            display="flex"
+            height="100%"
+            position="relative"
+            zIndex={1}
+          >
+            <Block px={[3, 4, 5]}>
+              <HeadingStroke
+                fontSize={[9, 8, 9, "7.5rem"]}
+                color="surfaceCallout"
+              >
+                <Skeleton display="inline-block">
+                  <Content id="portfolio.heroTitle" />
+                </Skeleton>
+              </HeadingStroke>
+            </Block>
+          </HeaderOffset>
+        </Relative>
       </Block>
 
-      <Block key="right" textAlign="left" variant="Callout">
+      <Block key="right" textAlign="left" variant="Primary">
         <Grid gridTemplateRows="1fr auto" minHeight="600px">
           <HeaderOffset>
             <Block py={5} px={[4, 5]}>
               <Stack gap={4}>
-                <HeadingStroke fontSize={[9, 8, 9, 11]}>
-                  <Skeleton>
-                    <Content id="portfolio.heroTitle" />
-                  </Skeleton>
-                </HeadingStroke>
-
                 {/* <Keyline /> */}
-
                 <Stack gap={2}>
                   <Skeleton>
                     <Paragraph fontSize={3} fontFamily="secondary">
@@ -70,6 +88,7 @@ export const Hero = () => {
               </Stack>
             </Block>
           </HeaderOffset>
+
           <Block>
             <Grid gridTemplateColumns={["none", "1fr 1fr"]} overflow="hidden">
               <Button
@@ -83,7 +102,7 @@ export const Hero = () => {
               <Button
                 as="a"
                 href="mailto:brendan.rygus@gmail.com"
-                variant="Primary"
+                variant="Cta"
                 style={{ borderRadius: 0 }}
               >
                 Get in touch

@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { position, shadow } from "styled-system";
+import { layout, position, shadow } from "styled-system";
 
 export const Relative = styled.div`
+  ${layout};
   ${position};
   ${shadow};
   position: relative;
