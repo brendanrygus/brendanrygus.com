@@ -28,7 +28,8 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token pftg6v8z2i"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -90,6 +91,7 @@
     "@storybook/react": "^6.0.21",
     "@svgr/cli": "^5.4.0",
     "babel-loader": "^8.1.0",
+    "chromatic": "^5.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-prettier": "^3.1.2",
