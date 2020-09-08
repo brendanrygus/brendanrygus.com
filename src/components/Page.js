@@ -13,6 +13,7 @@ const PageBg = createGlobalStyle`
     min-height: 100vh;
   }
 `;
+PageBg.displayName = "PageBg";
 PageBg.defaultProps = {
   bg: "surfaceBase",
   color: "textPrimary"

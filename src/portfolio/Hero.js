@@ -27,6 +27,7 @@ const ImageOverlay = styled(Block)`
   ${({ isHovered, theme }) =>
     isHovered ? theme.imageOverlayHover : theme.imageOverlay};
 `;
+ImageOverlay.displayName = "ImageOverlay";
 
 export const Hero = () => {
   return (

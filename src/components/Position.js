@@ -7,12 +7,14 @@ export const Relative = styled.div`
   ${shadow};
   position: relative;
 `;
+Relative.displayName = "Relative";
 
 export const Absolute = styled.div`
   ${position};
   ${shadow};
   position: absolute;
 `;
+Absolute.displayName = "Absolute";
 
 export const AbsoluteCentered = { ...Absolute };
 AbsoluteCentered.defaultProps = {
@@ -20,15 +22,18 @@ AbsoluteCentered.defaultProps = {
   left: "50%",
   transform: "translate3d(-50%, -50%, 0)"
 };
+AbsoluteCentered.displayName = "AbsoluteCentered";
 
 export const Fixed = styled.div`
   ${position};
   ${shadow};
   position: fixed;
 `;
+Fixed.displayName = "Fixed";
 
 export const Sticky = styled.div`
   ${position};
   ${shadow};
   position: sticky;
 `;
+Sticky.displayName = "Sticky";

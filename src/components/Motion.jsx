@@ -15,6 +15,7 @@ const FadeInBlock = styled(Block)`
   ${AnimationTimingStyles};
   animation-timing-function: ${({ theme }) => theme.motion.easing.enter};
 `;
+FadeInBlock.displayName = "FadeInBlock";
 
 export const FadeIn = ({ children, delay, duration, ...props }) => {
   return (
@@ -33,6 +34,7 @@ const SlideInBlock = styled(Block)`
   ${AnimationTimingStyles};
   animation-timing-function: ${({ theme }) => theme.motion.easing.spring};
 `;
+SlideInBlock.displayName = "SlideInBlock";
 
 export const SlideIn = ({ children, delay, duration, ...props }) => {
   return (

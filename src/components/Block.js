@@ -32,6 +32,7 @@ const BlockWrapper = styled("div")`
   ${space};
   ${typography};
 `;
+BlockWrapper.displayName = "BlockWrapper";
 
 export const Block = React.forwardRef((props, ref) => (
   <BlockWrapper {...props} ref={ref} />
