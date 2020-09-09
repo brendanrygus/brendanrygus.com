@@ -31,3 +31,4 @@ server/db-favorites.json
 server/db-search.json
 server/db-users.json
 build-storybook.log
+storybook-static
