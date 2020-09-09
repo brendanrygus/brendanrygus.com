@@ -61,12 +61,33 @@ export const Hero = () => {
         </Relative>
       </Block>
 
-      <Block key="right" textAlign="left" variant="Primary">
+      <Block
+        key="right"
+        textAlign="left"
+        variant="Primary"
+        bg="surfaceBody"
+        position="relative"
+      >
+        <Block display={["block", "none"]}>
+          <React.Suspense fallback={null}>
+            <ImageOverlay width="100%" height="100%">
+              <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+            </ImageOverlay>
+          </React.Suspense>
+        </Block>
         <Grid gridTemplateRows="1fr auto" minHeight="600px">
           <HeaderOffset>
             <Block py={5} px={[4, 5]}>
               <Stack gap={4}>
                 {/* <Keyline /> */}
+                <Block display={["block", "none"]}>
+                  <HeadingStroke fontSize={9} color="surfaceCallout">
+                    <Skeleton display="inline-block">
+                      <Content id="portfolio.heroTitle" />
+                    </Skeleton>
+                  </HeadingStroke>
+                </Block>
+
                 <Stack gap={2}>
                   <Skeleton>
                     <Paragraph fontSize={3} fontFamily="secondary">

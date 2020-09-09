@@ -25,7 +25,7 @@ export const WavePlaceholderStyles = css`
   }
   &::before {
     background: currentColor;
-    opacity: 0.1;
+    opacity: 0.05;
   }
   &::after {
     animation: ${WaveAnimation} 2s ${({ theme }) => theme.motion.easing.default}
@@ -36,7 +36,7 @@ export const WavePlaceholderStyles = css`
       currentColor 50%,
       transparent 100%
     );
-    opacity: 0.25;
+    opacity: 0.12;
   }
 `;
 
