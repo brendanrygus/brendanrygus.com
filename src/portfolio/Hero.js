@@ -112,7 +112,12 @@ export const Hero = () => {
           </HeaderOffset>
 
           <Block>
-            <Grid gridTemplateColumns={["none", "1fr 1fr"]} overflow="hidden">
+            <Grid
+              gridGap={[2, "0px"]}
+              gridTemplateColumns={["none", "1fr 1fr"]}
+              overflow="hidden"
+              p={[4, "0px"]}
+            >
               <Button
                 as={RouterLink}
                 to={{ hash: PortfolioScrollRoutes.Work }}
