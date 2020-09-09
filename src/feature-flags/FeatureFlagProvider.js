@@ -1,15 +1,7 @@
 import React from "react";
 import { userPrefersDark } from "theme";
 
-const getFlagFromQueryParams = (feature, defaultValue) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const featureParam = urlParams.get(feature);
-  if (!featureParam) {
-    return defaultValue;
-  }
-  // Convert str 'param=true' | 'param=false' to boolean
-  return JSON.parse(featureParam);
-};
+import { getFlagFromQueryParams } from "./feature-flags.utils";
 
 // Set flags at runtime based on user preferences, or query param overrides
 const FEATURE_FLAGS = {
