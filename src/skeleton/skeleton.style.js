@@ -36,12 +36,12 @@ export const WavePlaceholderStyles = css`
       currentColor 50%,
       transparent 100%
     );
-    opacity: 0.12;
+    opacity: 0.05;
   }
 `;
 
 export const SkeletonLoadingBar = styled(Block)`
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   height: 1em;
   ${WavePlaceholderStyles};
 `;
