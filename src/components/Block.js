@@ -21,7 +21,6 @@ const addVariantTheme = ({ variant }) =>
   `;
 
 const BlockWrapper = styled("div")`
-  ${addVariantTheme};
   ${background};
   ${border};
   ${color};
@@ -37,3 +36,16 @@ BlockWrapper.displayName = "BlockWrapper";
 export const Block = React.forwardRef((props, ref) => (
   <BlockWrapper {...props} ref={ref} />
 ));
+
+export const LinkBlock = styled.a`
+  ${addVariantTheme};
+  ${background};
+  ${border};
+  ${color};
+  ${flexbox};
+  ${layout};
+  ${position};
+  ${shadow};
+  ${space};
+  ${typography};
+`;

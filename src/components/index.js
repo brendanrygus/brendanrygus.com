@@ -1,6 +1,6 @@
 export { AspectRatio } from "./AspectRatio";
 export { AspectRatioImage } from "./AspectRatioImage";
-export { Block } from "./Block";
+export { Block, LinkBlock } from "./Block";
 export { Button } from "./Button";
 export { Card } from "./Card";
 export { ErrorMessage } from "./ErrorMessage";

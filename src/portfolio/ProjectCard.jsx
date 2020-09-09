@@ -11,6 +11,7 @@ import {
   Grid,
   HeadingLarge,
   Keyline,
+  LinkBlock,
   LoadingIndicator,
   Paragraph,
   SlideIn,
@@ -65,7 +66,7 @@ export const ProjectBaseballCard = ({
   const linkProps =
     variant === "full"
       ? {
-          as: "a",
+          as: LinkBlock,
           target: "_blank",
           href: url,
           title: `Launch ${title}`,

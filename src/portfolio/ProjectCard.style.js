@@ -34,7 +34,9 @@ export const HoverCard = styled(Block)`
     outline: none;
   }
 
-  &:link {
+  &:link,
+  &:visited {
+    color: currentColor;
     text-decoration: none;
   }
 `;
