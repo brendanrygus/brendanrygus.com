@@ -18,6 +18,9 @@ FadeIn.args = {
   delay: "0ms",
   duration: 2
 };
+FadeIn.parameters = {
+  chromatic: { pauseAnimationAtEnd: true }
+};
 
 export const SlideIn = args => (
   <SlideInComponent {...args}>
@@ -27,4 +30,7 @@ export const SlideIn = args => (
 SlideIn.args = {
   delay: "0ms",
   duration: 2
+};
+SlideIn.parameters = {
+  chromatic: { pauseAnimationAtEnd: true }
 };
