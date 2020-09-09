@@ -1,6 +1,6 @@
 import React from "react";
 import { Block, Link, Stack, Grid, Paragraph } from "components";
-import { useAnalytics, EVENT_TYPES } from "analytics";
+import { useAnalytics, EventTypes } from "analytics";
 import { Content, useContent } from "content";
 
 const year = new Date().getFullYear();
@@ -9,7 +9,7 @@ export const Footer = () => {
   const { trackEvent } = useAnalytics();
 
   const trackNavigationEvent = label =>
-    trackEvent(EVENT_TYPES.NAVIGATION, "Footer Social", label);
+    trackEvent(EventTypes.NAVIGATION, "Footer Social", label);
 
   const { contact } = useContent();
   const { links } = contact;

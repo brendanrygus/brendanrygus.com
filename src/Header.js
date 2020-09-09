@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useAnalytics, EVENT_TYPES } from "analytics";
+import { useAnalytics, EventTypes } from "analytics";
 import {
   Block,
   Fixed,
@@ -35,7 +35,7 @@ export const Header = () => {
   const isHashActive = id => hash === `#${id}`;
 
   const trackNavigationEvent = label =>
-    trackEvent(EVENT_TYPES.NAVIGATION, "Navigation Link", label);
+    trackEvent(EventTypes.NAVIGATION, "Navigation Link", label);
 
   return (
     <Fixed top={0} left={0} right={0} zIndex={3} boxShadow="elevation3">
@@ -99,7 +99,7 @@ const DarkModeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
 
   const handleDarkModeToggle = () => {
-    trackEvent(EVENT_TYPES.INTERACTION, "Toggle Dark Mode", !isDarkMode);
+    trackEvent(EventTypes.INTERACTION, "Toggle Dark Mode", !isDarkMode);
     setIsDarkMode(isDark => !isDark);
   };
 

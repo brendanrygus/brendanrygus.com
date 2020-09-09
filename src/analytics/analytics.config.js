@@ -7,7 +7,7 @@ export const ANALYTICS_BODY = `
   ga('send', 'pageview');
 `;
 
-export const EVENT_TYPES = {
+export const EventTypes = {
   ERROR: "Error",
   FEATURE_FLAG: "Feature Flag",
   NAVIGATION: "Navigation",

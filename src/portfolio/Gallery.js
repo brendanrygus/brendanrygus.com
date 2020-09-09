@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useInView } from "react-intersection-observer";
-import { useAnalytics, EVENT_TYPES } from "analytics";
+import { useAnalytics, EventTypes } from "analytics";
 import { Block, Grid, HeadingMedium, Stack } from "components";
 import { Content } from "content";
 import { useFeatureFlags } from "feature-flags";
@@ -19,7 +19,7 @@ const LazyGrid = ({ children }) => {
 
   React.useEffect(() => {
     if (inView) {
-      trackEvent(EVENT_TYPES.INTERACTION, "Scrolled to Gallery");
+      trackEvent(EventTypes.INTERACTION, "Scrolled to Gallery");
     }
   }, [inView, trackEvent]);
 
@@ -48,7 +48,7 @@ export const Gallery = ({ projects }) => {
   const { unlocked } = useFeatureFlags();
   const { trackMeta } = useAnalytics();
   React.useEffect(() => {
-    trackMeta(EVENT_TYPES.FEATURE_FLAG, "Portfolio Unlocked", unlocked);
+    trackMeta(EventTypes.FEATURE_FLAG, "Portfolio Unlocked", unlocked);
   }, [trackMeta, unlocked]);
 
   return (

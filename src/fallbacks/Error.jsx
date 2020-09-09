@@ -1,5 +1,5 @@
 import React from "react";
-import { useAnalytics, EVENT_TYPES } from "analytics";
+import { useAnalytics, EventTypes } from "analytics";
 import { Block, Page, Paragraph, Link } from "components";
 import { useContent, Content } from "content";
 import { HeaderOffset } from "Header";
@@ -13,7 +13,7 @@ export const ErrorFallback = ({
   const { trackMeta } = useAnalytics();
 
   React.useEffect(() => {
-    trackMeta(EVENT_TYPES.ERROR, error.message, componentStack.toString());
+    trackMeta(EventTypes.ERROR, error.message, componentStack.toString());
   }, [componentStack, error, trackMeta]);
 
   const { errors } = useContent();

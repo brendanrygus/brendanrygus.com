@@ -1,6 +1,6 @@
 import React from "react";
 import { lighten } from "polished";
-import { useAnalytics, EVENT_TYPES } from "analytics";
+import { useAnalytics, EventTypes } from "analytics";
 import {
   Absolute,
   AbsoluteCentered,
@@ -54,14 +54,14 @@ export const ProjectBaseballCard = ({
   React.useEffect(
     function trackHoverInteraction() {
       if (isHovered) {
-        trackEvent(EVENT_TYPES.INTERACTION, "Project Hover", title);
+        trackEvent(EventTypes.INTERACTION, "Project Hover", title);
       }
     },
     [isHovered, title, trackEvent]
   );
 
   const trackNavigationEvent = () =>
-    trackEvent(EVENT_TYPES.INTERACTION, "Project Card Link", title);
+    trackEvent(EventTypes.INTERACTION, "Project Card Link", title);
 
   const linkProps =
     variant === "full"
