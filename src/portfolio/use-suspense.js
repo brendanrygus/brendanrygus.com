@@ -1,6 +1,7 @@
 import { createResource } from "lib/react-cache-forked";
 
 const logger = (label, ...values) =>
+  process.env.NODE_ENV === "development" &&
   console.log(`[⌛️SUSPENSE] ${label}`, ...values);
 
 /* Suspense Fetching Utils */

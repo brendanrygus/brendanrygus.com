@@ -26,7 +26,7 @@ export const contact = {
 };
 
 const portfolio = {
-  heroTitle: "UX Engineer",
+  heroTitle: "UX Developer",
   heroSubtitle:
     "I create accessible, performant, and delightful user experiences.",
   title: "Recent Work",

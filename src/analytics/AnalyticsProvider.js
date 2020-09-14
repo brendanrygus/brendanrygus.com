@@ -21,7 +21,8 @@ const sendGoogleAnalytics = (...args) => {
 };
 
 const prefix = "📊Analytics";
-const logger = (...args) => console.log(`[${prefix}]`, ...args);
+const logger = (...args) =>
+  process.env.NODE_ENV === "development" && console.log(`[${prefix}]`, ...args);
 
 const sendGoogleAnalyticsEvent = ({
   category,

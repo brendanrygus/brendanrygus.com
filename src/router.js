@@ -49,7 +49,9 @@ export const HashScrollRoute = ({ children, id, threshold }) => {
   // TODO: Refactor scroll route management to sync with header bar
   React.useEffect(() => {
     if (hash.includes(id)) {
-      console.log("inView", inView);
+      if (process.env.NODE_ENV === "development") {
+        console.log("inView", inView);
+      }
     }
   }, [hash, id, inView]);
 
