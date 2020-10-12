@@ -9,9 +9,6 @@ export const meta = {
 export const contact = {
   name: "Brendan Rygus",
   email: "brendan.rygus@gmail.com",
-  github: "https://github.com/brendanrygus",
-  instagram: "https://instagram.com/brendanrygus",
-  linkedin: "https://www.linkedin.com/in/brendanrygus",
   links: [
     {
       label: "Github",
@@ -30,7 +27,7 @@ const portfolio = {
   heroSubtitle:
     "I create accessible, performant, and delightful user experiences.",
   title: "Recent Work",
-  subtitle: "Selected clients"
+  subtitle: "Test it in prod!"
 };
 
 export const projects = [
@@ -41,6 +38,7 @@ export const projects = [
     description:
       "On-site technical consultant and feature developer for the new flagship web product.",
     tags: ["React", "Redux", "TypeScript", "Design System"],
+    timestamp: "Developed at Rangle Japan, 2019-2020.",
     cta: "Coming Soon",
     url: "https://uniqlo.com/jp/ja",
     imageSrc: Images.Uniqlo,
@@ -58,6 +56,7 @@ export const projects = [
       "A personalized approach to diabetes care used by patients & professionals around the world.",
     cta: "See the docs",
     tags: ["React", "Redux", "RxJs", "TypeScript", "styled-components"],
+    timestamp: "Developed at Rangle.io, 2017-2018.",
     url: "https://www.diabetescareplatform.com/",
     imageSrc: Images.Roche,
     imageAlt: "",
@@ -73,6 +72,7 @@ export const projects = [
     description:
       "Rebuilding the front end of a controversial startup on the road to 'unicorn'-level growth.",
     tags: ["React", "Redux", "styled-components", "Component Library"],
+    timestamp: "Developed at Rangle.io, 2019.",
     cta: "Shop Now",
     url: "https://forhims.com",
     imageSrc: Images.Hims,
@@ -90,6 +90,7 @@ export const projects = [
     description: "A beautiful e-commerce experience for a new DTC brand.",
     cta: "Shop Now",
     tags: ["React", "Redux", "styled-components", "Component Library"],
+    timestamp: "Developed at Rangle.io, 2018-2019.",
     url: "https://forhers.com",
     imageSrc: Images.Hers,
     imageCaption: "For Hers",

@@ -20,7 +20,7 @@ import {
 } from "components";
 import { FeatureFlag } from "feature-flags";
 import { Icon } from "icons";
-import { useHover } from "usies/use-hover";
+import { useInteraction } from "usies/use-hover";
 
 import {
   AnimatedBlock,
@@ -33,6 +33,12 @@ import { FillImage } from "./FillImage";
 
 const RATIO = 9 / 16;
 
+const VARIANTS = {
+  PREVIEW: "preview",
+  IMAGE: "IMAGE"
+};
+const isPreview = variant => variant === VARIANTS.PREVIEW;
+
 export const ProjectBaseballCard = ({
   brandColor,
   cta,
@@ -44,11 +50,12 @@ export const ProjectBaseballCard = ({
   imageSrc,
   logo,
   tags,
+  timestamp,
   title,
   url,
-  variant = "preview"
+  variant = VARIANTS.PREVIEW
 }) => {
-  const [hoverRef, isHovered] = useHover();
+  const [hoverRef, isHovered] = useInteraction();
 
   const { trackEvent } = useAnalytics();
   React.useEffect(
@@ -125,7 +132,7 @@ export const ProjectBaseballCard = ({
 
           <Flex alignItems="center" justifyContent="center" textAlign="center">
             <FadeIn delay={4}>
-              {variant === "preview" ? (
+              {isPreview(variant) ? (
                 <Icon
                   size="8rem"
                   name={icon}
@@ -141,6 +148,7 @@ export const ProjectBaseballCard = ({
               bg={isHovered ? brandColor : "surfaceBody"}
               description={description}
               tags={tags}
+              timestamp={isPreview(variant) ? null : timestamp}
               height="100%"
             />
           </SlideIn>
@@ -150,7 +158,7 @@ export const ProjectBaseballCard = ({
   );
 };
 
-const ProjectDetails = ({ bg, description, tags, ...props }) => {
+const ProjectDetails = ({ bg, description, tags, timestamp, ...props }) => {
   return (
     <ContrastAwareTextBlock
       bg={bg}
@@ -164,6 +172,16 @@ const ProjectDetails = ({ bg, description, tags, ...props }) => {
             <Paragraph fontFamily="secondary" lineHeight="body" fontSize={2}>
               {description}
             </Paragraph>
+            {timestamp && (
+              <Paragraph
+                fontFamily="secondary"
+                lineHeight="body"
+                opacity={0.66}
+                fontSize={1}
+              >
+                {timestamp}
+              </Paragraph>
+            )}
             <Keyline bg="currentColor" opacity={0.2} />
           </>
         )}

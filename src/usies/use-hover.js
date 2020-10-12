@@ -33,7 +33,7 @@ export const useFocus = () => {
     const targetNode = ref.current;
     if (targetNode) {
       targetNode.addEventListener("focus", handleFocus);
-      targetNode.addEventListener("blur", handleFocus);
+      targetNode.addEventListener("blur", handleBlur);
 
       return () => {
         targetNode.removeEventListener("focus", handleBlur);
@@ -42,4 +42,17 @@ export const useFocus = () => {
     }
   }, [ref]);
   return [ref, isFocused];
+};
+
+export const useInteraction = () => {
+  const [focusRef, isFocused] = useFocus();
+  const [hoverRef, isHovered] = useHover();
+  const setRef = React.useCallback(
+    ref => {
+      focusRef.current = ref;
+      hoverRef.current = ref;
+    },
+    [focusRef, hoverRef]
+  );
+  return [setRef, isFocused || isHovered];
 };
