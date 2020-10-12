@@ -48,13 +48,21 @@ export const Gallery = ({ projects }) => {
   const { unlocked } = useFeatureFlags();
   const { trackMeta } = useAnalytics();
   React.useEffect(() => {
-    trackMeta(EventTypes.FEATURE_FLAG, "Portfolio Unlocked", unlocked);
+    trackMeta(
+      EventTypes.FEATURE_FLAG,
+      "Portfolio Unlocked",
+      unlocked.toString()
+    );
   }, [trackMeta, unlocked]);
 
   return (
     <Block as="section" textAlign="left" pb={5} px={[3, 4, 5]}>
       <Stack mb={5} gap={3}>
-        <HeadingMedium fontSize={3} fontFamily="secondary">
+        <HeadingMedium
+          color="textSecondary"
+          fontSize={3}
+          fontFamily="secondary"
+        >
           <Skeleton width="12ch">
             <Content id="portfolio.subtitle" />
           </Skeleton>
