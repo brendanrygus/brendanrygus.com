@@ -32,7 +32,12 @@ ImageOverlay.displayName = "ImageOverlay";
 export const Hero = () => {
   return (
     <Grid as="section" gridTemplateColumns={["initial", "initial", "6fr 4fr"]}>
-      <Block key="left" bg="surfaceBody" display={["none", "none", "block"]}>
+      <Block
+        id="hero-left"
+        key="left"
+        bg="surfaceBody"
+        display={["none", "none", "block"]}
+      >
         <Relative width="100%" height="100%">
           <React.Suspense fallback={null}>
             <ImageOverlay width="100%" height="100%">
@@ -62,6 +67,7 @@ export const Hero = () => {
       </Block>
 
       <Block
+        id="hero-right"
         key="right"
         textAlign="left"
         variant="Primary"
