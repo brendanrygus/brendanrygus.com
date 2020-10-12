@@ -44,7 +44,7 @@ export const useFocus = () => {
   return [ref, isFocused];
 };
 
-export const useInteraction = () => {
+export const useInteraction = ({ disabled = false }) => {
   const [focusRef, isFocused] = useFocus();
   const [hoverRef, isHovered] = useHover();
   const setRef = React.useCallback(
@@ -54,5 +54,5 @@ export const useInteraction = () => {
     },
     [focusRef, hoverRef]
   );
-  return [setRef, isFocused || isHovered];
+  return [setRef, disabled ? false : isFocused || isHovered];
 };

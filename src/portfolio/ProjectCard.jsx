@@ -38,6 +38,7 @@ const VARIANTS = {
   IMAGE: "IMAGE"
 };
 const isPreview = variant => variant === VARIANTS.PREVIEW;
+const isLive = variant => variant === VARIANTS.IMAGE;
 
 export const ProjectBaseballCard = ({
   brandColor,
@@ -55,7 +56,9 @@ export const ProjectBaseballCard = ({
   url,
   variant = VARIANTS.PREVIEW
 }) => {
-  const [hoverRef, isHovered] = useInteraction();
+  const [hoverRef, isHovered] = useInteraction({
+    disabled: isPreview(variant)
+  });
 
   const { trackEvent } = useAnalytics();
   React.useEffect(
@@ -85,7 +88,7 @@ export const ProjectBaseballCard = ({
   return (
     <AspectRatio ratio={RATIO}>
       <HoverCard
-        color={isHovered ? "textOnDark" : "textPrimary"}
+        color={isLive(variant) && isHovered ? "textOnDark" : "textPrimary"}
         height="100%"
         hoverColor={lighten(0.12, brandColor)}
         onClick={trackNavigationEvent}
@@ -110,7 +113,7 @@ export const ProjectBaseballCard = ({
           <FillImage
             alt={imageAlt || title}
             src={imageSrc}
-            opacity={variant === "full" ? 1 : 0.5}
+            opacity={0.5}
             style={{
               filter: "saturate(0)"
             }}
@@ -148,7 +151,7 @@ export const ProjectBaseballCard = ({
               bg={isHovered ? brandColor : "surfaceBody"}
               description={description}
               tags={tags}
-              timestamp={isPreview(variant) ? null : timestamp}
+              timestamp={timestamp}
               height="100%"
             />
           </SlideIn>
