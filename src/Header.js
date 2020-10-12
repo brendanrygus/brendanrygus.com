@@ -68,7 +68,7 @@ export const Header = () => {
               as={RouterLink}
               to={createHashLink(PortfolioScrollRoutes.About)}
               variant={
-                isHashActive(PortfolioScrollRoutes.About) ? "Cta" : "Flat"
+                isHashActive(PortfolioScrollRoutes.About) ? "Flat" : "Cta"
               }
               fontFamily="secondary"
               onClick={() => trackNavigationEvent("About")}
@@ -79,7 +79,7 @@ export const Header = () => {
               as={RouterLink}
               to={createHashLink(PortfolioScrollRoutes.Work)}
               variant={
-                isHashActive(PortfolioScrollRoutes.Work) ? "Cta" : "Flat"
+                isHashActive(PortfolioScrollRoutes.Work) ? "Flat" : "Cta"
               }
               fontFamily="secondary"
               onClick={() => trackNavigationEvent("Work")}
@@ -99,7 +99,11 @@ const DarkModeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
 
   const handleDarkModeToggle = () => {
-    trackEvent(EventTypes.INTERACTION, "Toggle Dark Mode", !isDarkMode);
+    trackEvent(
+      EventTypes.INTERACTION,
+      "Toggle Dark Mode",
+      (!isDarkMode).toString()
+    );
     setIsDarkMode(isDark => !isDark);
   };
 
