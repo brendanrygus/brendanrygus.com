@@ -27,7 +27,7 @@ const portfolio = {
   heroSubtitle:
     "I create accessible, performant, and delightful user experiences.",
   title: "Recent Work",
-  subtitle: "Test it in prod!"
+  subtitle: ""
 };
 
 export const projects = [
