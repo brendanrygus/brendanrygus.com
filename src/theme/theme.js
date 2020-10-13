@@ -105,7 +105,7 @@ const colorsLight = {
   textOnDark: colorPalette.white,
   textReverse: colorPalette.white,
   textAction: colorPalette.hawaii,
-  textCallout: colorPalette.dragonLord,
+  textCallout: colorPalette.sunset,
   uiDivider: colorPalette.black1,
   uiShadow: "rgba(0, 0, 0, 0.05)"
 };
