@@ -6,9 +6,9 @@ import {
   Grid,
   HeadingStroke,
   Link,
-  Stack,
   Paragraph,
-  Relative
+  Relative,
+  Stack
 } from "components";
 import { Content } from "content";
 import { HeaderOffset } from "Header";
@@ -29,6 +29,9 @@ const ImageOverlay = styled(Block)`
 `;
 ImageOverlay.displayName = "ImageOverlay";
 
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+
 export const Hero = () => {
   return (
     <Grid as="section" gridTemplateColumns={["initial", "initial", "6fr 4fr"]}>
@@ -41,7 +44,7 @@ export const Hero = () => {
         <Relative width="100%" height="100%">
           <React.Suspense fallback={null}>
             <ImageOverlay width="100%" height="100%">
-              <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+              <FillImage src={HERO_IMAGE} />
             </ImageOverlay>
           </React.Suspense>
 
@@ -74,18 +77,18 @@ export const Hero = () => {
         bg="surfaceBody"
         position="relative"
       >
-        <Block display={["block", "none"]}>
+        <Block id="hero-mobile-image" display={["block", "none"]}>
           <React.Suspense fallback={null}>
             <ImageOverlay width="100%" height="100%">
-              <FillImage src="https://images.unsplash.com/photo-1563639326633-3d331a93af06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+              <FillImage src={HERO_IMAGE} />
             </ImageOverlay>
           </React.Suspense>
         </Block>
+
         <Grid gridTemplateRows="1fr auto" minHeight="600px">
           <HeaderOffset>
             <Block py={5} px={[4, 5]}>
               <Stack gap={4}>
-                {/* <Keyline /> */}
                 <Block display={["block", "none"]}>
                   <HeadingStroke fontSize={9} color="surfaceCallout">
                     <Skeleton display="inline-block">
