@@ -90,7 +90,7 @@ export const ButtonWithVariants = styled(ButtonElement)`
 ButtonWithVariants.displayName = "ButtonWithVariants";
 
 export const ButtonText = styled.span`
-  font-size: ${({ theme }) => theme.fontSizes[4]};
+  font-size: 1.125rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
