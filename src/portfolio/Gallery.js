@@ -58,7 +58,7 @@ export const Gallery = ({ projects }) => {
   return (
     <Block as="section" textAlign="left" pb={5} px={[3, 4, 5]}>
       <Stack mb={5} gap={3}>
-        <HeadingMedium
+        {/* <HeadingMedium
           color="textSecondary"
           fontSize={3}
           fontFamily="secondary"
@@ -66,7 +66,7 @@ export const Gallery = ({ projects }) => {
           <Skeleton width="12ch">
             <Content id="portfolio.subtitle" />
           </Skeleton>
-        </HeadingMedium>
+        </HeadingMedium> */}
         <HeadingMedium>
           <Skeleton width="12ch">
             <Content id="portfolio.title" />
